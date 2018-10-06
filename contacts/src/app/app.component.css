@@ -1,0 +1,38 @@
+.frame{
+    background-image: url("../assets/img/notebook.jpg");
+}
+.contactsLedger{
+    text-align: center;
+    width: 60%;
+    font-family: akaDora, cursive;
+}
+.ledgerTop{
+    padding: 26px 0px 8px 0;
+}
+.contactEntry {
+    height: 110px;
+}
+
+.newContact {
+    padding-top: 18px;
+}
+
+.newContactInput {
+    padding-bottom: 10px;
+}
+
+span.errorMessage {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-family: 'Arial';
+    font-size: smaller;
+    font-weight: bold;
+    position: absolute;
+    color: red;
+}
+
+@font-face {
+    font-family:'akaDora';
+    src:url("../assets/fonts/akaDora.otf");
+    src:url("../assets/fonts/akaDora.ttf");
+}

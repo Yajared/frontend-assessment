@@ -1,0 +1,35 @@
+.deletable {
+  position: relative;
+  cursor: pointer;
+}
+
+.deletable:before, .deletable:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 10%;
+  margin-top: -0.5px;
+  background: #e32636;
+}
+
+.deletable:before {
+  left: 25%;
+}
+.deletable:after {
+  right: 25%;
+  background: #e32636;
+  transition: width 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.deletable:hover:before {
+  background: #e32636;
+  width: 50%;
+  transition: width 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.deletable:hover:after {
+  background: transparent;
+  width: 50%;
+  transition: 0s;
+}

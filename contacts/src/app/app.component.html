@@ -1,5 +1,17 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="frame">
+  <div class="contactsLedger">
+      <h1 class="ledgerTop">
+        {{this.itemType}} List
+      </h1>
+      <div class="contactEntry" *ngFor="let contact of getContactList()">
+          <item type="{{this.itemType}}" id="{{contact.id}}" [fields]='[contact.name,contact.phone,contact.email]' (delete)="onDeleted($event)"></item>
+      </div>
+      <div class="newContact">
+          <div class="newContactInput"><input type="text" [(ngModel)]="newName"/><span class="errorMessage" [hidden]="!showNewNameError">Name Cannot be Blank</span></div>
+          <div class="newContactInput"><input type="text" [(ngModel)]="newPhone" /><span class="errorMessage" [hidden]="!showNewPhoneError">Phone Cannot be Blank</span> <!--TODO: Add phone number pipe--></div>
+          <div class="newContactInput"><input type="text" [(ngModel)]="newEmail" /><span class="errorMessage" [hidden]="!showNewEmailError">Email Cannot be Blank</span></div>
+          <div><button title="Add" (click)="onAdded(this.newName, this.newPhone, this.newEmail)">Add Contact</button></div>
+      </div>
+
+  </div>
 </div>
